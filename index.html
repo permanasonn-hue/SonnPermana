@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantin Buk Rina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="brand">
+        <span class="logo">🍽️</span>
+        <div>
+            <h1>Kantin Buk Rina</h1>
+            <p>Sistem Pemesanan dan Antrean</p>
+        </div>
+    </div>
+    <button id="adminButton" class="admin-button">Login Admin</button>
+</header>
+
+<main class="container">
+
+    <section id="customerSection">
+        <div class="welcome">
+            <h2>Selamat Datang!</h2>
+            <p>Silakan pilih makanan dan minuman favoritmu.</p>
+        </div>
+
+        <div class="menu-tools">
+            <input type="search" id="searchInput"
+                   placeholder="Cari menu makanan atau minuman...">
+
+            <select id="categoryFilter">
+                <option value="Semua">Semua Menu</option>
+                <option value="Makanan">Makanan</option>
+                <option value="Minuman">Minuman</option>
+                <option value="Camilan">Camilan</option>
+            </select>
+        </div>
+
+        <h2 class="section-title">Daftar Menu</h2>
+        <div id="menuList" class="menu-grid"></div>
+
+        <section class="cart-section">
+            <h2>🛒 Keranjang Pesanan</h2>
+            <div id="cartList"></div>
+
+            <div class="cart-total">
+                <strong>Total Pembayaran:</strong>
+                <strong id="cartTotal">Rp0</strong>
+            </div>
+
+            <form id="checkoutForm">
+                <input type="text" id="customerName"
+                       placeholder="Masukkan nama pemesan" required>
+
+                <button type="submit" class="primary-button">
+                    Buat Pesanan
+                </button>
+            </form>
+        </section>
+
+        <section class="queue-section">
+            <h2>📋 Antrean Pesanan Saya</h2>
+            <div id="customerOrders"></div>
+        </section>
+    </section>
+
+    <section id="adminSection" hidden>
+        <div class="admin-heading">
+            <div>
+                <h2>Dashboard Admin</h2>
+                <p>Kelola menu dan pesanan Kantin Buk Rina.</p>
+            </div>
+            <button id="logoutButton" class="secondary-button">
+                Keluar Admin
+            </button>
+        </div>
+
+        <section class="admin-card">
+            <h3>Tambah Menu Baru</h3>
+
+            <form id="menuForm" class="menu-form">
+                <input type="text" id="menuName"
+                       placeholder="Nama menu" required>
+
+                <input type="number" id="menuPrice"
+                       placeholder="Harga menu" min="1" required>
+
+                <select id="menuCategory" required>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Minuman">Minuman</option>
+                    <option value="Camilan">Camilan</option>
+                </select>
+
+                <input type="text" id="menuIcon"
+                       placeholder="Emoji menu (contoh 🍜)" value="🍽️">
+
+                <button type="submit" class="primary-button">
+                    Tambahkan Menu
+                </button>
+            </form>
+        </section>
+
+        <section class="admin-card">
+            <h3>Daftar Menu Admin</h3>
+            <div id="adminMenuList"></div>
+        </section>
+
+        <section class="admin-card">
+            <h3>Daftar Semua Pesanan</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Antrean</th>
+                            <th>Nama</th>
+                            <th>Pesanan</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminOrderList"></tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Kantin Buk Rina. Semua Hak Dilindungi.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+ 
